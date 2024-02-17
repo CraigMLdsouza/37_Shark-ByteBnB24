@@ -1,0 +1,37 @@
+/* App.css */
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .app-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .slider-container {
+
+    width: 70%;
+    height: 50%;
+    margin-bottom: 22%;
+  }
+  
+  .image-slider {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-slider img {
+    width: 100%;
+
+
+   
+    transition: transform 0.5s ease;
+  }
+  
+  /* Optional: Add more styling for the slider controls, captions, etc. */
+  
