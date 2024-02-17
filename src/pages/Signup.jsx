@@ -51,29 +51,23 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div style={{ textAlign: 'center', maxWidth: '400px', margin: '0 auto', padding: '20px', backgroundColor: '#f7f7f7', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
+      <h1 style={{ marginBottom: '20px', color: '#333' }}>Sign Up</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSignup}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Account Type:
-          <select value={accountType} onChange={(e) => setAccountType(e.target.value)}>
+        <div style={{ marginBottom: '20px' }}>
+          <input style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', boxSizing: 'border-box' }} type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div style={{ marginBottom: '20px' }}>
+          <input style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', boxSizing: 'border-box' }} type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <div style={{ marginBottom: '20px' }}>
+          <select style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', boxSizing: 'border-box' }} value={accountType} onChange={(e) => setAccountType(e.target.value)}>
             <option value="user">User</option>
             <option value="company">Company</option>
           </select>
-        </label>
-        <br />
-        <button type="submit">Sign Up</button>
+        </div>
+        <button style={{ width: '100%', padding: '10px', borderRadius: '5px', backgroundColor: '#007bff', color: '#fff', border: 'none', cursor: 'pointer', transition: 'background-color 0.3s ease' }} type="submit">Sign Up</button>
       </form>
     </div>
   );
