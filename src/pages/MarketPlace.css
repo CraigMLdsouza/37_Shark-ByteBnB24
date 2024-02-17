@@ -1,0 +1,39 @@
+.marketplace-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .marketplace-card {
+    width: 250px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .marketplace-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .green-card {
+    background-color: #b3e5b3;
+  }
+  
+  .orange-card {
+    background-color: #ffd699;
+  }
+  
+  .red-card {
+    background-color: #ffb3b3;
+  }
+  
+  .card-details {
+    margin-top: 10px;
+  }
+  
+  /* Add additional styling as needed */
+  
