@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { auth } from '../firebase'; // Replace with your authentication hook
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { auth } from '../firebase'; // Assuming auth is a custom hook for authentication
 
 const packagingMaterialsOptions = [
   'Cardboard boxes',
@@ -26,8 +26,6 @@ const packagingMaterialsOptions = [
 ];
 
 const ProductListing = () => {
-  const auth = auth(); // Replace this with your authentication hook
-  const [data, setData] = useState(null);
   const [productId, setProductId] = useState('');
   const [productType, setProductType] = useState('');
   const [origin, setOrigin] = useState('');
@@ -40,9 +38,23 @@ const ProductListing = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [productUrl, setProductUrl] = useState('');
 
-  const handleAutofill = async () => {
-    // ... (same as before)
-  };
+    const handleAutofill = async () => {
+    const url = `https://big-product-data.p.rapidapi.com/gtin/${productId}`;
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '17cb3e5b23msh8adcb8db4771cddp13835ejsne667556c3047',
+        'X-RapidAPI-Host': 'big-product-data.p.rapidapi.com'
+      }
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+
+    setName(data.properties.title);
+    setDescription(data.properties.description);
+    setImageUrl(data.stores[0].image);
+    setProductUrl(data.stores[0].url);
+    };
 
   const handleFileUpload = async (file, index) => {
     const storage = getStorage();
@@ -60,32 +72,30 @@ const ProductListing = () => {
   };
 
   const handleSubmit = async () => {
-    const productData = {
-      productId,
-      productType,
-      origin,
-      name,
-      description,
-      packagingMaterials,
-      labourPractices,
-      esgScore,
-      fileUrls,
-      imageUrl,
-      productUrl
-    };
-
     try {
       const user = auth.currentUser;
 
       if (user) {
-        const collectionName = 'YOUR_COLLECTION_NAME'; // Update with your collection name
+        const collectionName = 'products'; // Replace with your collection name
         const firestore = getFirestore();
 
         // Create a document reference with a custom ID (productId)
         const productDocRef = doc(firestore, collectionName, productId);
 
         // Add or set data to the document
-        await setDoc(productDocRef, productData);
+        await setDoc(productDocRef, {
+          productId,
+          productType,
+          origin,
+          name,
+          description,
+          packagingMaterials,
+          labourPractices,
+          esgScore,
+          fileUrls,
+          imageUrl,
+          productUrl
+        });
 
         console.log("Document written with ID: ", productDocRef.id);
       } else {
@@ -99,6 +109,7 @@ const ProductListing = () => {
 
   return (
     <div>
+      <h1>Product Listing</h1>
       <div>
         <label htmlFor="productId">Product ID:</label>
         <input
@@ -213,11 +224,6 @@ const ProductListing = () => {
           </div>
         ))}
       </div>
-      {data ? (
-        <pre>{data}</pre>
-      ) : (
-        <p>Loading...</p>
-      )}
       <button onClick={handleSubmit}>Submit</button>
     </div>
   );
