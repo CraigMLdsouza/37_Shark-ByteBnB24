@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import firestore from '../firebase';
-import './MarketPlace.css'; // Import the CSS file for styles
+import './marketplace.css'; // Import the CSS file for styles
 
 const MarketPlace = () => {
   const [products, setProducts] = useState([]);
@@ -15,7 +15,9 @@ const MarketPlace = () => {
 
         const productsData = productsSnapshot.docs.map((doc) => ({
           id: doc.id,
-          ...doc.data(),
+          ...doc.data(), // Spread the document data
+          image: doc.data().imageUrl, // Assign imageUrl to image field
+          // Remove description from here
         }));
 
         // Sort products based on finalMetric in descending order
@@ -50,10 +52,12 @@ const MarketPlace = () => {
           to={`/product/${product.id}`}
           className={`marketplace-card ${getColorClass(product.finalMetric)}`}
         >
-          <img src={product.image} alt={product.name} />
-          <div className="card-details">
+          <div className="image-container">
+            <img src={product.image} alt={product.name} className="product-image" />
+          </div>
+          <div className="product-details">
             <h2>{product.name}</h2>
-            <p>{product.description}</p>
+            {/* Remove product description from here */}
             {/* Additional information here */}
             <p>Final Metric: {product.finalMetric}</p>
             <p>Other Field: {product.otherField}</p>
