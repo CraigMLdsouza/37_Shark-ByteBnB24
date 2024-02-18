@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { auth } from '../firebase';
 import firestore from '../firebase';
 import { collection, doc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import './companyprofile.css';
 
 const CompanyProfile = () => {
   const [displayName, setDisplayName] = useState('');
@@ -83,7 +84,7 @@ const CompanyProfile = () => {
   };
 
   return (
-    <div>
+    <div className="container-box">
       <h1>Company Profile</h1>
       {isEditing ? (
         <form onSubmit={handleUpdateProfile}>
