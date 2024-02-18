@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { auth } from '../firebase'; // Replace with your authentication hook
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-
+import './productlisting.css'
 const packagingMaterialsOptions = [
   'Cardboard boxes',
   'Corrugated boxes',
@@ -108,9 +108,9 @@ const ProductListing = () => {
   };
 
   return (
-    <div>
-      <h1>Product Listing</h1>
-      <div>
+    <div className="container-box">
+      <div className="container-content">
+        <h1>Product Listing</h1>
         <label htmlFor="productId">Product ID:</label>
         <input
           type="text"
