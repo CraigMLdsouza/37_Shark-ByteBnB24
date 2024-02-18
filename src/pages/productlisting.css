@@ -1,0 +1,109 @@
+/* Style for the container box */
+.container-box {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f7f7f7; /* Light gray background color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the content within the container */
+  .container-content {
+    padding: 20px;
+  }
+  
+  /* Style for headings */
+  .container-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Style for form elements */
+  .container-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .container-content input[type="text"],
+  .container-content textarea,
+  .container-content select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .container-content input[type="text"]:focus,
+  .container-content textarea:focus,
+  .container-content select:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border color on focus */
+  }
+  
+  .container-content select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+  }
+  
+  /* Style for file input */
+  .container-content input[type="file"] {
+    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .container-content .file-input-label {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff; /* Blue background color for file input */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container-content .file-input-label:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Style for buttons */
+  .container-content button {
+    padding: 14px 28px;
+    background-color: #007bff; /* Blue background color for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container-content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Style for file links */
+  .container-content a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .container-content a:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  

@@ -1,0 +1,71 @@
+/* Style for the form container */
+.container-box {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for headings */
+  .container-box h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for form elements */
+  .container-box form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .container-box form input[type="text"],
+  .container-box form input[type="number"],
+  .container-box form input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .container-box form button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container-box form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for profile display */
+  .container-box div p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .container-box div button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container-box div button:hover {
+    background-color: #0056b3;
+  }
+  
