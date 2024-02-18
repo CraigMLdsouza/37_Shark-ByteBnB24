@@ -1,0 +1,31 @@
+/* productdetails.css */
+
+.product-details-container {
+    max-width: 600px; /* Limit the maximum width for better readability */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .product-details-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .product-details-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .product-details-container p:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last paragraph */
+  }
+  
+  .loading-message {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
