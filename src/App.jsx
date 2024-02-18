@@ -8,6 +8,7 @@ import CompanyProfile from './pages/CompanyProfile';
 import ProductDetails from './pages/ProductDetails'; // Import the ProductDetails component
 import ProductListing from './pages/ProductListing';
 import Header from './components/Header';
+import ESG from './pages/ESG';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/market" element={<MarketPlace />} />
           <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/product-listing" element={<ProductListing />} />
+          <Route path="/esg" element={<ESG />} />
           {/* Add the new route for product details */}
           <Route path="/product/:productId" element={<ProductDetails />} />
           <Route path='/header' element={<Header />} />
