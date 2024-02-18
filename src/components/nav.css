@@ -1,20 +1,28 @@
+/* Navbar */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  padding-right: 40px; /* Add padding from the right */
+  z-index: 1000; /* Ensure the navbar is above other content */
 }
 
 .logo {
   font-size: 3rem;
   color: #333;
+  text-decoration: none; /* Remove underline */
 }
 
 .nav-links {
   list-style: none;
-  margin: 0;
+  margin-right: 100px;
   padding: 0;
   display: flex;
 }
@@ -23,14 +31,18 @@
   margin-right: 40px;
 }
 
+.nav-links li:last-child {
+  margin-right: 0; /* Remove margin from the last list item */
+}
+
 .nav-links li a {
   text-decoration: none;
   color: #333;
-  font-size: 25px;
+  font-size: 20px; /* Decrease font size slightly */
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #ff6b6b; /* Change color on hover */
+  color: #007bff; /* Change color on hover to a primary color */
 }
