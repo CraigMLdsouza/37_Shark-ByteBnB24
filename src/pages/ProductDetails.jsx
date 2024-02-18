@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import firestore from '../firebase'; // Make sure to import your Firestore configuration
+import './productdetails.css';
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -30,16 +31,17 @@ const ProductDetails = () => {
 
   if (!productDetails) {
     // Render loading state or handle the case where details are not loaded yet
-    return <p>Loading...</p>;
+    return <p className="loading-message">Loading...</p>;
   }
 
   return (
-    <div>
+    <div className="product-details-container">
       <h2>Product Details</h2>
       <p>Product ID: {productId}</p>
       <p>Origin: {productDetails.origin}</p>
       <p>Labor Practices: {productDetails.laborPractices}</p>
       <p>Environmental Footprint: {productDetails.environmentalFootprint}</p>
+      <p>Description: {productDetails.description}</p>
     </div>
   );
 };
