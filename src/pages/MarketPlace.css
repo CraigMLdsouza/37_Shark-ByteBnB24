@@ -1,39 +1,67 @@
 .marketplace-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  
-  .marketplace-card {
-    width: 250px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #333;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .marketplace-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .green-card {
-    background-color: #b3e5b3;
-  }
-  
-  .orange-card {
-    background-color: #ffd699;
-  }
-  
-  .red-card {
-    background-color: #ffb3b3;
-  }
-  
-  .card-details {
-    margin-top: 10px;
-  }
-  
-  /* Add additional styling as needed */
-  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.marketplace-card {
+  width: 400px; /* Adjusted width for better readability */
+  min-height: 300px; /* Set minimum height to ensure content visibility */
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #111;
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.marketplace-card:hover {
+  transform: translateY(-5px);
+}
+
+.green-card {
+  background-color: #defade;
+}
+
+.orange-card {
+  background-color: #ffe8cc;
+}
+
+.red-card {
+  background-color: #ffd4d4;
+}
+
+.image-container {
+  width: 150px; /* Adjusted width for the image container */
+  margin-right: 20px;
+}
+
+.product-image {
+  width: 100%; /* Ensure image fills the container */
+  height: auto; /* Allow height to adjust according to the aspect ratio */
+  border-radius: 8px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-details h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  margin: 8px 0;
+}
+
+.view-more {
+  margin-top: auto;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #007bff;
+}
