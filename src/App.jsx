@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import CompanyProfile from './pages/CompanyProfile';
 import ProductDetails from './pages/ProductDetails'; // Import the ProductDetails component
 import ProductListing from './pages/ProductListing';
+import Header from './components/Header';
 
 const App = () => {
   return (
@@ -21,7 +22,8 @@ const App = () => {
           <Route path="/product-listing" element={<ProductListing />} />
           {/* Add the new route for product details */}
           <Route path="/product/:productId" element={<ProductDetails />} />
-          <Route path="/" element={<div>Home Page Content</div>} />
+          <Route path='/header' element={<Header />} />
+          <Route path="/" element={<Header/>} />
         </Routes>
       </div>
     </Router>
